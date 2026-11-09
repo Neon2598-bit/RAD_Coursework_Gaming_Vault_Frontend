@@ -13,16 +13,16 @@ function HomePage() {
         Browse games, share reviews and keep track of what you want to play, are playing and have finished.
       </p>
 
-      {!user && (
-        <div className="mt-8 flex justify-center gap-3">
-          <Link to="/register" className="rounded-lg bg-vault-accent px-5 py-2.5 font-medium hover:bg-vault-accent-hover">
-            Get started
+      <div className="mt-8 flex justify-center gap-3">
+        <Link to="/games" className="rounded-lg bg-vault-accent px-5 py-2.5 font-medium hover:bg-vault-accent-hover">
+          Browse games
+        </Link>
+        {!user && (
+          <Link to="/register" className="rounded-lg border border-vault-700 px-5 py-2.5 font-medium hover:bg-vault-800">
+            Create account
           </Link>
-          <Link to="/login" className="rounded-lg border border-vault-700 px-5 py-2.5 font-medium hover:bg-vault-800">
-            Login
-          </Link>
-        </div>
-      )}
+        )}
+      </div>
     </section>
   );
 }
