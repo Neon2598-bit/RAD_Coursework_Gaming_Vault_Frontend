@@ -46,9 +46,11 @@ function Navbar() {
           onClick={() => setOpen(false)}
         >
           <NavLink to="/" end className={linkClass}>Home</NavLink>
+          <NavLink to="/games" className={linkClass}>Games</NavLink>
 
           {user ? (
             <>
+              <NavLink to="/my-reviews" className={linkClass}>My reviews</NavLink>
               <NavLink to="/profile" className={linkClass}>Profile</NavLink>
               {user.role === "admin" && <NavLink to="/admin" className={linkClass}>Admin</NavLink>}
               <span className="px-3 py-2 text-sm text-slate-400">{user.name}</span>
