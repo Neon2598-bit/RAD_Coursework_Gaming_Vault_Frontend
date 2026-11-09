@@ -5,6 +5,8 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AdminRoute from "./components/AdminRoute";
 import GuestRoute from "./components/GuestRoute";
 import HomePage from "./pages/HomePage";
+import BacklogPage from "./pages/BacklogPage";
+import DashboardPage from "./pages/DashboardPage";
 import GamesPage from "./pages/GamesPage";
 import GameDetailsPage from "./pages/GameDetailsPage";
 import LoginPage from "./pages/LoginPage";
@@ -43,6 +45,8 @@ function App() {
         </Route>
 
         <Route element={<ProtectedRoute />}>
+          <Route path="/dashboard" element={<DashboardPage />} />
+          <Route path="/backlog" element={<BacklogPage />} />
           <Route path="/my-reviews" element={<MyReviewsPage />} />
           <Route path="/profile" element={<ProfilePage />} />
         </Route>

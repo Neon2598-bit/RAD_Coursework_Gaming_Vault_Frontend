@@ -2,6 +2,8 @@ import { configureStore } from "@reduxjs/toolkit";
 import authReducer, { forceLogout } from "./authSlice";
 import gamesReducer from "./gamesSlice";
 import reviewsReducer from "./reviewsSlice";
+import backlogReducer from "./backlogSlice";
+import dashboardReducer from "./dashboardSlice";
 import { setAuthFailureHandler } from "../api/axios";
 
 export const store = configureStore({
@@ -9,6 +11,8 @@ export const store = configureStore({
     auth: authReducer,
     games: gamesReducer,
     reviews: reviewsReducer,
+    backlog: backlogReducer,
+    dashboard: dashboardReducer,
   },
 });
 
