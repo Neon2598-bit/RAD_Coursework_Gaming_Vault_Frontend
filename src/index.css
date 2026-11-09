@@ -1,0 +1,14 @@
+@import "tailwindcss";
+
+@theme {
+  --color-vault-950: #0b0d14;
+  --color-vault-900: #11141f;
+  --color-vault-800: #1a1f2e;
+  --color-vault-700: #262d42;
+  --color-vault-accent: #7c5cff;
+  --color-vault-accent-hover: #6a49f0;
+}
+
+body {
+  @apply bg-vault-950 text-slate-100 antialiased;
+}
