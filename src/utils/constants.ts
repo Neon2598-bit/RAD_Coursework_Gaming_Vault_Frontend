@@ -8,3 +8,7 @@ export const PLATFORMS = [
 ] as const;
 
 export const BACKLOG_STATUSES = ["wishlist", "playing", "completed"] as const;
+
+export const GAMES_PER_PAGE = 12;
+
+export const REVIEWS_PER_PAGE = 5;

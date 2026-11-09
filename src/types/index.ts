@@ -70,3 +70,25 @@ export interface DashboardData {
   reviews: { count: number; averageRating: number };
   topGenres: { genre: string; count: number }[];
 }
+
+export interface GamesPage {
+  games: Game[];
+  total: number;
+  page: number;
+  pages: number;
+}
+
+export interface GameFilters {
+  search: string;
+  genre: string;
+  platform: string;
+  page: number;
+}
+
+export interface ReviewsPage {
+  reviews: Review[];
+  total: number;
+  page: number;
+  pages: number;
+  averageRating: number;
+}
