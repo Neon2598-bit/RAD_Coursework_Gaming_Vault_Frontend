@@ -11,3 +11,5 @@ export const logout = async () => (await api.post<ApiResponse<null>>("/auth/logo
 
 export const getMe = async () =>
   (await api.get<ApiResponse<{ user: User }>>("/auth/me")).data.data.user;
+
+export const deleteMe = async () => (await api.delete<ApiResponse<null>>("/auth/me")).data;

@@ -59,6 +59,18 @@ export const logoutUser = createAsyncThunk("auth/logout", async () => {
   clearTokens();
 });
 
+export const deactivateAccount = createAsyncThunk<void, void, { rejectValue: string }>(
+  "auth/deactivate",
+  async (_, { rejectWithValue }) => {
+    try {
+      await authApi.deleteMe();
+      clearTokens();
+    } catch (error) {
+      return rejectWithValue(getErrorMessage(error));
+    }
+  }
+);
+
 const authSlice = createSlice({
   name: "auth",
   initialState,
@@ -102,6 +114,12 @@ const authSlice = createSlice({
       })
       .addCase(logoutUser.fulfilled, (state) => {
         state.user = null;
+      })
+      .addCase(deactivateAccount.fulfilled, (state) => {
+        state.user = null;
+      })
+      .addCase(deactivateAccount.rejected, (state, action) => {
+        state.error = action.payload ?? "Could not deactivate account";
       });
   },
 });
