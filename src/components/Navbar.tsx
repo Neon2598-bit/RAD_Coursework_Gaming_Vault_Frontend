@@ -50,6 +50,8 @@ function Navbar() {
 
           {user ? (
             <>
+              <NavLink to="/dashboard" className={linkClass}>Dashboard</NavLink>
+              <NavLink to="/backlog" className={linkClass}>Backlog</NavLink>
               <NavLink to="/my-reviews" className={linkClass}>My reviews</NavLink>
               <NavLink to="/profile" className={linkClass}>Profile</NavLink>
               {user.role === "admin" && <NavLink to="/admin" className={linkClass}>Admin</NavLink>}

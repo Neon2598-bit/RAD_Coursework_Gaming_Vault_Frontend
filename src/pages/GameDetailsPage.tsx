@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
+import BacklogButton from "../components/BacklogButton";
 import GameCover from "../components/GameCover";
 import ReviewSection from "../components/ReviewSection";
 import { useAppDispatch, useAppSelector } from "../store/hooks";
@@ -49,6 +50,7 @@ function GameDetailsPage() {
             <p className="whitespace-pre-line leading-relaxed text-slate-300">
               {game.description || "No description available."}
             </p>
+            <BacklogButton gameId={game._id} />
           </div>
         </article>
       )}
