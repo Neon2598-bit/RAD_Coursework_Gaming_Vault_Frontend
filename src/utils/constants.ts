@@ -12,3 +12,9 @@ export const BACKLOG_STATUSES = ["wishlist", "playing", "completed"] as const;
 export const GAMES_PER_PAGE = 12;
 
 export const REVIEWS_PER_PAGE = 5;
+
+export const STATUS_LABELS: Record<(typeof BACKLOG_STATUSES)[number], string> = {
+  wishlist: "Wishlist",
+  playing: "Playing",
+  completed: "Completed",
+};
