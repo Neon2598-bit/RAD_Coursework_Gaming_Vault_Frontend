@@ -5,8 +5,11 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import AdminRoute from "./components/AdminRoute";
 import GuestRoute from "./components/GuestRoute";
 import HomePage from "./pages/HomePage";
+import GamesPage from "./pages/GamesPage";
+import GameDetailsPage from "./pages/GameDetailsPage";
 import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
+import MyReviewsPage from "./pages/MyReviewsPage";
 import ProfilePage from "./pages/ProfilePage";
 import AdminPage from "./pages/AdminPage";
 import NotFoundPage from "./pages/NotFoundPage";
@@ -31,6 +34,8 @@ function App() {
     <Routes>
       <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
+        <Route path="/games" element={<GamesPage />} />
+        <Route path="/games/:id" element={<GameDetailsPage />} />
 
         <Route element={<GuestRoute />}>
           <Route path="/login" element={<LoginPage />} />
@@ -38,6 +43,7 @@ function App() {
         </Route>
 
         <Route element={<ProtectedRoute />}>
+          <Route path="/my-reviews" element={<MyReviewsPage />} />
           <Route path="/profile" element={<ProfilePage />} />
         </Route>
 
