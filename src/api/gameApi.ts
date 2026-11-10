@@ -1,5 +1,5 @@
 import api from "./axios";
-import type { ApiResponse, Game, GameFilters, GamesPage } from "../types";
+import type { ApiResponse, Game, GameFilters, GamePayload, GamesPage } from "../types";
 import { GAMES_PER_PAGE } from "../utils/constants";
 
 export const getGames = async (filters: GameFilters, signal?: AbortSignal) => {
@@ -16,3 +16,19 @@ export const getGameById = async (id: string, signal?: AbortSignal) => {
   const res = await api.get<ApiResponse<{ game: Game }>>(`/games/${id}`, { signal });
   return res.data.data.game;
 };
+
+export const getDeletedGames = async (signal?: AbortSignal) =>
+  (await api.get<ApiResponse<{ games: Game[] }>>("/games/deleted", { signal })).data.data.games;
+
+export const createGame = async (payload: GamePayload) =>
+  (await api.post<ApiResponse<{ game: Game }>>("/games", payload)).data.data.game;
+
+export const updateGame = async (id: string, payload: GamePayload) =>
+  (await api.put<ApiResponse<{ game: Game }>>(`/games/${id}`, payload)).data.data.game;
+
+export const deleteGame = async (id: string) => {
+  await api.delete(`/games/${id}`);
+};
+
+export const restoreGame = async (id: string) =>
+  (await api.put<ApiResponse<{ game: Game }>>(`/games/${id}/restore`)).data.data.game;
