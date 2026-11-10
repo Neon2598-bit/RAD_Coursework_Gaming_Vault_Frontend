@@ -4,6 +4,7 @@ import gamesReducer from "./gamesSlice";
 import reviewsReducer from "./reviewsSlice";
 import backlogReducer from "./backlogSlice";
 import dashboardReducer from "./dashboardSlice";
+import adminReducer from "./adminSlice";
 import { setAuthFailureHandler } from "../api/axios";
 
 export const store = configureStore({
@@ -13,6 +14,7 @@ export const store = configureStore({
     reviews: reviewsReducer,
     backlog: backlogReducer,
     dashboard: dashboardReducer,
+    admin: adminReducer,
   },
 });
 
