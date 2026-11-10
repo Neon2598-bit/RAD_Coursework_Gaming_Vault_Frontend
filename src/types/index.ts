@@ -92,3 +92,12 @@ export interface ReviewsPage {
   pages: number;
   averageRating: number;
 }
+
+export interface GamePayload {
+  title: string;
+  genre: Genre;
+  platform: Platform;
+  releaseYear: number;
+  description: string;
+  coverImage: string;
+}
