@@ -8,8 +8,8 @@ This is the React + TypeScript frontend for the ITS2020 Rapid Application Develo
 
 | | URL |
 |---|---|
-| Live frontend | `<add Vercel URL>` |
-| Live backend API | `<add Render URL>` |
+| Live frontend | `https://rad-coursework-gaming-vault-fronten.vercel.app/` |
+| Live backend API | `https://rad-coursework-gaming-vault-backend.onrender.com/` |
 | Backend repository | https://github.com/Neon2598-bit/RAD_Coursework_Gaming_Vault_Backend |
 | Frontend repository | https://github.com/Neon2598-bit/RAD_Coursework_Gaming_Vault_Frontend |
 
